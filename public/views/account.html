@@ -1,0 +1,35 @@
+<h3 class="center">مرحبا </h3>
+<h4 class="center">{{user.name}}</h4>
+<br />
+<table class="table rtl table-striped">
+	<tr>
+		<td>تاريخ الانتهاء</td>
+		<td>{{user.expdate | date:'dd/MM/yyyy':'UTC'}}</td>
+	</tr>
+	<tr>
+		<td>الفاتوره القادمه</td>
+		<td>{{user.expdate | date:'dd/MM/yyyy':'UTC'}}</td>
+	</tr>
+	<tr>
+		<td>رقم الجوال</td>
+		<td>{{user.Phone}}</td>
+	</tr>
+	<tr>
+		<td>اسم المستخدم</td>
+		<td>{{user.UserName}}</td>
+	</tr>
+	<tr>
+		<td>العنوان</td>
+		<td>{{user.Address || '-----' }}</td>
+	</tr>
+</table>
+<br />
+
+<center class="note">
+	ملاحظة يرجى مراجعة البيانات وإبلاغ الموزع عن أيا خطئ سواء كان في اسم المشترك او عنوان السكن او تاريخ الانتهاء وشكرا
+</center>
+<!-- <h3 class="center">اتصل بنا</h3>
+<h4 class="center grey"><a ng-href="tel: {{user.supportNumber || '00000000'}}">
+	<i class="fa fa-whatsapp" aria-hidden="true"></i>
+ {{user.supportNumber || '00000000'}}
+</a></h4> -->

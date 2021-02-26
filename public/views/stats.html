@@ -1,0 +1,90 @@
+<div class="scrollable">
+ <div class="scrollable-content section">
+
+  <div class="row" ng-if="user">
+
+
+<img src="img/logo-wise.png" class="lg top-logo" />
+
+  <div class="figures bottom20">
+    <span class="big status caps" ng-class="{red: user.expiresIn < 0}">
+    {{user.expiresIn < 0 ? 'Expired' : 'Active' }} 
+    </span>
+    <span class="small light">{{expiresIn()}}</span>    
+  </div>
+
+
+
+  <div class="figures bottom20">
+    <span class="big orange" ng-class="{red: user.AcctIsFup}">
+     <span count-to='{{user.speed.replace("/\w+/", "")}}' value="0" duration=".5"></span>
+   
+    </span>
+    <span class="small light">السرعة </span>    
+  </div>
+
+  <div class="figures bottom20">
+    <span class="big med">
+    
+     <span count-to='{{user.limit}}' value="0" duration=".5"></span>
+
+
+       </span>
+    <span class="small light">
+     الحزمة    {{user.type == "Daily" ? "اليومية" :  "الشهرية"}}
+
+
+     </span>    
+  </div>
+
+
+  <div class="figures bottom20" ng-if="user.reports">
+    <span class="big med">
+    
+     <span>{{usage()}}</span>
+
+       </span>
+    <span class="small light">الاستهلاك</span>    
+  </div>
+
+  <div ng-if="user.reports.length" class="figures bottom20">
+    <span class="big smed">
+        
+     <span>{{remain()}}</span>
+
+       </span>
+    <span class="small light">المتبقي</span>    
+  </div>
+
+
+
+
+
+    <div class="bar" ng-if="user.reports.length">
+     <isteven-omni-bar current-value="percent()">
+  </isteven-omni-bar>
+
+</div>
+
+</div>
+
+
+<fieldset ng-if="!user" class="login">
+  <div class="error" ng-if="error">
+    {{error}}
+    <br />
+  </div>
+
+<img src="img/logo-wise.png" class="lg" />
+
+  <div class="form-group">
+    <input type="text" ng-model="fields.mobile" class="form-control" placeholder="رقم الجوال">
+  </div>
+  <br />
+  <button ng-click="getStats()" class="btn btn-fire btn-block">
+    تسجيل الدخول
+  </button>
+</fieldset>
+
+</div>
+</div>

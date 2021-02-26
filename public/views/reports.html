@@ -1,0 +1,18 @@
+<div class="scrollable">
+	<div class="scrollable-content section">
+<h3 class="center">استهلاك اخر عشرة ايام</h3>
+<br>
+		<table class="table rtl grey table-striped">
+
+			<tr>
+				<td><strong>التاريخ</strong></td>
+				<td><strong>الاستهلاك</strong></td>
+			</tr>
+			<tr ng-repeat="report in user.reports">
+				<td>{{ report.date }}</td>		
+				<td>{{ report.total.toFixed(2) + 'MB'}}</td>
+
+			</tr>
+		</table>
+	</div>
+</div>
